@@ -1,0 +1,31 @@
+{
+  "name": "varakin-lvl2",
+  "version": "1.0.0",
+  "description": "The second JS project for Hexlet. Difference calculator.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "Differencecalc",
+    "games",
+    "varakin"
+  ],
+  "author": "Vasily Varakin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-babel": "^5.2.1",
+    "eslint-plugin-import": "^2.14.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
