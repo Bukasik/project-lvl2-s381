@@ -1,7 +1,13 @@
 {
   "name": "varakin-lvl2",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "The second JS project for Hexlet. Difference calculator.",
+  "bin": {
+    "gendiff": "dist/bin/gendiff.js"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
@@ -25,7 +31,7 @@
     "eslint-plugin-babel": "^5.2.1",
     "eslint-plugin-import": "^2.14.0"
   },
-  "files": [
-    "dist"
-  ]
+  "dependencies": {
+    "commander": "^2.19.0"
+  }
 }
