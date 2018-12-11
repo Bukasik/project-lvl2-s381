@@ -3,3 +3,5 @@
 
 # Install
 [![asciicast](https://asciinema.org/a/HD7fUoH18WQsZ01bPAQXpwE4v.svg)](https://asciinema.org/a/HD7fUoH18WQsZ01bPAQXpwE4v)
+
+[![asciicast](https://asciinema.org/a/j0AM0Ge9SFslvbGzLoNwPpPNK.svg)](https://asciinema.org/a/j0AM0Ge9SFslvbGzLoNwPpPNK)
