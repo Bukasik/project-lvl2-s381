@@ -1,10 +1,13 @@
 import fs from 'fs';
+import path from 'path';
 import buildAst from './buildAst';
 import render from './render';
+import parser from './parsers';
 
 const readContent = (filePath) => {
+  const extName = path.extname(filePath);
   const data = fs.readFileSync(filePath, 'utf8');
-  return JSON.parse(data);
+  return parser(data, extName);
 };
 
 
