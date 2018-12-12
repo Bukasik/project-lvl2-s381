@@ -1,6 +1,6 @@
 {
   "name": "varakin-lvl2",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "The second JS project for Hexlet. Difference calculator.",
   "bin": {
     "gendiff": "dist/bin/gendiff.js"
@@ -44,6 +44,7 @@
   "dependencies": {
     "commander": "^2.19.0",
     "js-yaml": "^3.12.0",
+    "ini": "github:npm/ini",
     "lodash": "^4.17.11"
   }
 }
