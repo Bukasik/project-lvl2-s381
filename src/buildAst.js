@@ -12,6 +12,11 @@ const propertyAction = [
   },
 
   {
+    check: (key, obj1, obj2) => ((obj1[key] instanceof Object) && (obj2[key] instanceof Object)),
+    perform: (key, obj1, obj2, buildAst) => ({ key, type: 'children', children: buildAst(obj1[key], obj2[key]) }),
+  },
+
+  {
     check: (key, obj1, obj2) => ((_.has(obj1, key) && _.has(obj2, key))
                                 && (obj1[key] === obj2[key])),
     perform: (key, obj) => ({ key, type: 'unchanged', newValue: obj[key] }),
@@ -33,7 +38,7 @@ const buildAst = (obj1, obj2) => {
   const commonKeys = _.union(Object.keys(obj1), Object.keys(obj2));
   return commonKeys.map((key) => {
     const { perform } = getPropertyAction(key, obj1, obj2);
-    return perform(key, obj1, obj2);
+    return perform(key, obj1, obj2, buildAst);
   });
 };
 

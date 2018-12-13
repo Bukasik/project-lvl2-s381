@@ -1,7 +1,7 @@
 import yaml from 'js-yaml';
 import ini from 'ini';
 
-const parser = (data, extName) => {
+const dispatch = (data, extName) => {
   const mapping = {
     '.json': JSON.parse,
     '.yml': yaml.safeLoad,
@@ -10,4 +10,4 @@ const parser = (data, extName) => {
   return mapping[extName](data);
 };
 
-export default parser;
+export default dispatch;
