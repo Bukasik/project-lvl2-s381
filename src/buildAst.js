@@ -13,7 +13,7 @@ const propertyAction = [
 
   {
     check: (key, obj1, obj2) => ((obj1[key] instanceof Object) && (obj2[key] instanceof Object)),
-    perform: (key, obj1, obj2, buildAst) => ({ key, type: 'children', children: buildAst(obj1[key], obj2[key]) }),
+    perform: (key, obj1, obj2, buildAst) => ({ key, type: 'nested', children: buildAst(obj1[key], obj2[key]) }),
   },
 
   {
