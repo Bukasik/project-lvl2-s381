@@ -1,6 +1,6 @@
 {
   "name": "varakin-lvl2",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "The second JS project for Hexlet. Difference calculator.",
   "bin": {
     "gendiff": "dist/bin/gendiff.js"

@@ -9,8 +9,8 @@ program
   .version(version)
   .arguments('<firstConfig>')
   .arguments('<secondConfig>')
-  .option('-f, --format [type]', 'output format')
+  .option('-f, --format [type]', 'output format', 'simple')
   .action((filePath1, filePath2) => {
-    console.log(genDiff(filePath1, filePath2));
+    console.log(genDiff(filePath1, filePath2, program.format));
   })
   .parse(process.argv);

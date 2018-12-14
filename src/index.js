@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import buildAst from './buildAst';
-import render from './render';
+import renders from './render';
 import dispatch from './parsers';
 
 const readContent = (filePath) => {
@@ -11,11 +11,11 @@ const readContent = (filePath) => {
 };
 
 
-const genDiff = (filePath1, filePath2) => {
+const genDiff = (filePath1, filePath2, format) => {
   const before = readContent(filePath1);
   const after = readContent(filePath2);
   // console.log(buildAst(before, after));
-  return render(buildAst(before, after));
+  return renders(buildAst(before, after), format);
 };
 
 
