@@ -92,3 +92,11 @@ describe('genDiff plain answer tree', () => {
     expect(actual).toBe(expected);
   });
 });
+
+
+test('genDiff json to json format', () => {
+  const actual = genDiff('__tests__/__fixtures__/beforeTree.json',
+    '__tests__/__fixtures__/afterTree.json', 'jsondiff');
+  const expected = fs.readFileSync('__tests__/__fixtures__/jsonAnswerTree.txt', 'utf8').trim();
+  expect(actual).toBe(expected);
+});

@@ -21,6 +21,8 @@ const render = (ast, depth = 0) => {
   const result = _.flatten(ast.map((value) => {
     switch (value.type) {
       default:
+        return '';
+      case 'unchanged':
         return `${space}    ${value.key}: ${changeValue(value.newValue, depth + 1)}`;
       case 'changed':
         return [`${space}  - ${value.key}: ${changeValue(value.oldValue, depth + 1)}`,

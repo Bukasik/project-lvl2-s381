@@ -12,10 +12,10 @@ const readContent = (filePath) => {
 
 
 const genDiff = (filePath1, filePath2, format) => {
-  const before = readContent(filePath1);
-  const after = readContent(filePath2);
+  const content1 = readContent(filePath1);
+  const content2 = readContent(filePath2);
   // console.log(buildAst(before, after));
-  return renders(buildAst(before, after), format);
+  return renders(buildAst(content1, content2), format);
 };
 
 

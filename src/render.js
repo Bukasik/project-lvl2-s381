@@ -5,6 +5,7 @@ const renders = (data, format) => {
   const mapping = {
     simple: simpleRender,
     plain: plainRender,
+    jsondiff: JSON.stringify,
   };
   return mapping[format](data);
 };
