@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const changeValue = value => (value instanceof Object ? '[complex value]' : value);
+const renderValue = value => (value instanceof Object ? '[complex value]' : value);
 
 
 const render = (ast, ancestors = '') => {
@@ -10,11 +10,11 @@ const render = (ast, ancestors = '') => {
       case 'unchanged':
         return '';
       case 'changed':
-        return `Property '${fullPath}' was updated. From '${changeValue(value.oldValue)}' to '${changeValue(value.newValue)}'`;
+        return `Property '${fullPath}' was updated. From '${renderValue(value.oldValue)}' to '${renderValue(value.newValue)}'`;
       case 'removed':
         return `Property '${fullPath}' was removed`;
       case 'added':
-        return `Property '${fullPath}' was added with value: '${changeValue(value.newValue)}'`;
+        return `Property '${fullPath}' was added with value: '${renderValue(value.newValue)}'`;
       case 'nested':
         return render(value.children, fullPath);
       default:
