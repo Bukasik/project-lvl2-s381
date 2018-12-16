@@ -20,8 +20,6 @@ const render = (ast, depth = 0) => {
   const space = '    '.repeat(depth);
   const result = _.flatten(ast.map((value) => {
     switch (value.type) {
-      default:
-        return '';
       case 'unchanged':
         return `${space}    ${value.key}: ${changeValue(value.newValue, depth + 1)}`;
       case 'changed':
@@ -33,6 +31,8 @@ const render = (ast, depth = 0) => {
         return `${space}  + ${value.key}: ${changeValue(value.newValue, depth + 1)}`;
       case 'nested':
         return `${space}    ${value.key}: ${render(value.children, depth + 1)}`;
+      default:
+        throw new Error(`Unknown type ${value.type}`);
     }
   }));
   return `{\n${result.join('\n')}\n${space}}`;
