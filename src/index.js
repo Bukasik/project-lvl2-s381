@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import buildAst from './buildAst';
-import renders from './render';
+import renders from './renderers';
 import dispatch from './parsers';
 
 const readContent = (filePath) => {
